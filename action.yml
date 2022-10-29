@@ -1,0 +1,16 @@
+name: 'docker fuse action'
+description: 'Start a container with fuse'
+author: 'gemwuu'
+inputs:
+  fuse:
+    description: 'Allow fuse device'
+    default: true
+  privileged:
+    description: 'Use privileged container'
+    default: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.fuse }}
+    - ${{ inputs.privileged }}
